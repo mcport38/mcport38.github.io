@@ -1,3 +1,5 @@
+// Make the first table
+
 document.write("<table>");
 document.write("<tr>");
 document.write("<th>x</th>");
@@ -6,21 +8,24 @@ document.write("<th>y</th>");
 document.write("<th>result</th>");
 document.write("</tr>");
 
+//store the calculation results and control when to keep it the calculator running
 let validResult = [];
 let continueCalc = true;
-
+//loop to run the calculator until the user says stop
 while (continueCalc) {
     let x = prompt("Enter the first number:");
     let y = prompt("Enter the second number:");
     let operator = prompt("Enter the operator (+, -, *, /, %):");
     let result;
-
+// check that the numbers etnered are valid
     if (isNaN(x) || isNaN(y)) {
         result = "wrong input number";
     } else {
+
+        // convert the string inputs to numbers
         x = Number(x);
         y = Number(y);
-    
+    // preform the selected operation and store the result
     switch (operator) {
         case "+":
             result = x + y;
@@ -46,6 +51,8 @@ while (continueCalc) {
             result = "computation error";
     }
 }
+// add a row to the table
+
     document.write("<tr>");
     document.write("<td>" + x + "</td>");
     document.write("<td>" + operator + "</td>");
@@ -60,6 +67,7 @@ while (continueCalc) {
 
 document.write("</table>");
 
+//calculate the statistics
 let total = 0;
 for (let i=0; i < validResult.length; i++) {
     total += validResult[i];
