@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 4 Form</title>
+    <script src="validation.js" defer></script>
+    <style>
+        .error {
+            color: red;
+        }
+        .warning {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User Information Form</h2>
+
+<form id="myForm">
+
+    <!-- User information -->
+    Username:
+    <input type="text" id="username"><br><br>
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    Phone Number:
+    <input type="text" id="phone"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    Confirm Password:
+    <input type="password" id="confirmPassword"><br><br>
+
+    <!-- Gender selection -->
+    Gender:
+    <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="Female">Female
+    <input type="radio" name="gender" value="Other">Other
+    <br><br>
+
+    Age Group:
+    <select id="age">
+        <option value=""></option>
+        <option>&lt; 21 years old</option>
+        <option>21 - 25 years old</option>
+        <option>26 - 35 years old</option>
+        <option>36 - 50 years old</option>
+        <option>50+ years old</option>
+    </select>
+    <br><br>
+
+    Music Genre:
+    <input type="checkbox">Pop
+    <input type="checkbox">Hip-hop
+    <input type="checkbox">Jazz
+    <input type="checkbox">Rock
+    <input type="checkbox">Classical Music
+    <input type="checkbox">Country
+    <br><br>
+
+    <input type="button" value="Submit" onclick="validateForm()">
+    <input type="reset" value="Clear" onclick="clearErrors()">
+
+</form>
+
+<!-- validation messages -->
+<div id="messages"></div>
+
+</body>
+</html>
